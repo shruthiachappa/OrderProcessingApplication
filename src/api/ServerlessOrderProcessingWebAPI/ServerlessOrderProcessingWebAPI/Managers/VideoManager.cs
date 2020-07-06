@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace ServerlessOrderProcessingWebAPI.Managers
 {
-    public class PhysicalProductManager : CommissionManager, IProductManager
+    public class VideoManager : IProductManager
     {
         public bool GenerateSlip()
         {
-            return true;
+            throw new NotImplementedException();
         }
     }
 }

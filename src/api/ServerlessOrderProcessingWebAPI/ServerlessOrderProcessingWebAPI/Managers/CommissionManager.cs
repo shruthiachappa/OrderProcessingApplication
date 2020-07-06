@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace ServerlessOrderProcessingWebAPI.Managers
 {
-    public class PhysicalProductManager : CommissionManager, IProductManager
+    public class CommissionManager
     {
-        public bool GenerateSlip()
+        public bool GenerateCommission()
         {
             return true;
         }

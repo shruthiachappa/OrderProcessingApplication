@@ -7,10 +7,6 @@ namespace ServerlessOrderProcessingWebAPI.Managers
 {
     public interface IProductManager
     {
-        bool ActivateMembership();
-        bool Upgrademembership();
         bool GenerateSlip();
-        bool GenerateDuplicateSlip();
-        bool UpdateVideo();
     }
 }

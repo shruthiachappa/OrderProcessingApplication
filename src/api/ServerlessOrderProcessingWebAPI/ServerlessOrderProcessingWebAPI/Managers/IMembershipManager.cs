@@ -5,11 +5,8 @@ using System.Threading.Tasks;
 
 namespace ServerlessOrderProcessingWebAPI.Managers
 {
-    public class PhysicalProductManager : CommissionManager, IProductManager
+    public interface IMembershipManager
     {
-        public bool GenerateSlip()
-        {
-            return true;
-        }
+        bool SendEmail();
     }
 }

@@ -5,34 +5,9 @@ using System.Threading.Tasks;
 
 namespace ServerlessOrderProcessingWebAPI.Managers
 {
-    public class BookProductManager : IProductManager
+    public class BookProductManager : CommissionManager, IProductManager
     {
-        public bool ActivateMembership()
-        {
-          return true;
-        }
-
-        public bool GenerateCommission()
-        {
-            return true;
-        }
-
-        public bool GenerateDuplicateSlip()
-        {
-            return true;
-        }
-
         public bool GenerateSlip()
-        {
-            return true;
-        }
-
-        public bool UpdateVideo()
-        {
-            return true;
-        }
-
-        public bool Upgrademembership()
         {
             return true;
         }
