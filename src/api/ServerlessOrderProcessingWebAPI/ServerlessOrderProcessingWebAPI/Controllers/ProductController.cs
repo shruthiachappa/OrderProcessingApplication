@@ -18,17 +18,11 @@ namespace ServerlessOrderProcessingWebAPI.Controllers
 
         [Route("postorder")]
         [HttpPost]
-        public async Task<IActionResult> OrderProcess(OrderModel order)
+        public IActionResult PostOrder(OrderModel order)
         {
             ResponseModel response = new ResponseModel();
-            ProductManagerFactory factory = new ProductManagerFactory();
-            IProductManager productmanager = factory.GetProductManager(order.Product.ProductCode);
-            response.SlipGeneration = productmanager.GenerateSlip();
-            response.DuplicateSlipGeneration = productmanager.GenerateDuplicateSlip();
-            response.ActivateMembership = productmanager.ActivateMembership();
-            response.Upgrademembership = productmanager.UpgradeMembership();
-            response.AddVideo = productmanager.AddVideo();
-
+            ManagerFactory factory = new ManagerFactory();
+            response = factory.GetProductManager(order);
             return Ok(response);
         }
     }

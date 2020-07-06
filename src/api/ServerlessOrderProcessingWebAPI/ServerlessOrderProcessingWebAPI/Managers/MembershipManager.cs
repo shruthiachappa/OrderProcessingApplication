@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServerlessOrderProcessingWebAPI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ namespace ServerlessOrderProcessingWebAPI.Managers
 {
     public class MembershipManager : IMembershipManager
     {
-        public bool SendEmail()
+        public bool SendEmail(OrderModel order)
         {
             return true;
         }
