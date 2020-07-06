@@ -9,20 +9,17 @@ using ServerlessOrderProcessingWebAPI.Models;
 
 namespace ServerlessOrderProcessingWebAPI.Controllers
 {
-    public class ProductController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ProductController : ControllerBase
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         [Route("postorder")]
         [HttpPost]
         public IActionResult PostOrder(OrderModel order)
         {
             ResponseModel response = new ResponseModel();
             ManagerFactory factory = new ManagerFactory();
-            response = factory.GetProductManager(order);
+            response = factory.OrderManager(order);
             return Ok(response);
         }
     }

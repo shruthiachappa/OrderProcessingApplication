@@ -10,7 +10,7 @@ namespace ServerlessOrderProcessingWebAPI.Factory
 {
     public class ManagerFactory
     {
-        public ResponseModel GetProductManager(OrderModel order)
+        public ResponseModel OrderManager(OrderModel order)
         {
             ResponseModel response = new ResponseModel();
             if (order.Product.ProductCode == (long)ProductTypeEnums.PhysicalProduct)

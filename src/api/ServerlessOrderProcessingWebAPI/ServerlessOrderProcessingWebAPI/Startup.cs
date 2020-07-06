@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using ServerlessOrderProcessingWebAPI.Core;
 
 namespace ServerlessOrderProcessingWebAPI
 {
@@ -43,14 +44,9 @@ namespace ServerlessOrderProcessingWebAPI
 
             app.UseHttpsRedirection();
 
-            app.UseRouting();
+            app.ConfigureExceptionHandler();
 
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseMvc();
         }
     }
 }
