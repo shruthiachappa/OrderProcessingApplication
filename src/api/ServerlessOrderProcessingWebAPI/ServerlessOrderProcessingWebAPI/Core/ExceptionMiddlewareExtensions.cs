@@ -13,7 +13,7 @@ namespace ServerlessOrderProcessingWebAPI.Core
     public static class ExceptionMiddlewareExtensions
     {
         /// <summary>
-        /// This methos will be triggered before any controller method to valiate the model
+        /// This method will be triggered before any controller method to valiate the model and also triggers if any exception is thrown in entire system
         /// </summary>
         /// <param name="app"></param>
         public static void ConfigureExceptionHandler(this IApplicationBuilder app)

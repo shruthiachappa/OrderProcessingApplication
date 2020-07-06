@@ -10,17 +10,27 @@ namespace ServerlessOrderProcessingWebAPI.Managers
 {
     public class MembershipManager : IMembershipManager
     {
+        /// <summary>
+        /// Send email extension is called based on email model
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
         public bool SendEmail(OrderModel order)
         {
             EmailModel model = new EmailModel()
             {
-                FromAddress = "FROMADDRESS@TEST.com",
+                FromAddress = "FROMADDRESS@TEST.com", // can be further configurable in resource file or in settings
                 Subject = "Activating/upgrading membership"
             };
             SendEmailExtension.SendEmail(model);
             return true;
         }
 
+        /// <summary>
+        /// Based on type of membership. activate/upgrade is happening
+        /// </summary>
+        /// <param name="isNew"></param>
+        /// <returns></returns>
         public bool SubmitMembership(bool isNew)
         {
             bool result = false;

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace ServerlessOrderProcessingWebAPI.Core
 {
+    /// <summary>
+    /// Send email extension using AWS SES
+    /// </summary>
     public static class SendEmailExtension
     {
         public static void SendEmail(EmailModel model)
