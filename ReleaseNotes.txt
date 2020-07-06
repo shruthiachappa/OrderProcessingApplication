@@ -2,4 +2,5 @@
 2. Clean code principals is implemented
 3. Design patterns are implented - factory pattern
 4. Used AWS services
-5. PLease check git commit to see how the code is processed.
+5. Method summary and comments are added for better understanding and for extensions in future
+6. PLease check git commit to see how the code is processed.
