@@ -13,6 +13,7 @@ namespace ServerlessOrderProcessingWebAPI.Tests
 {
     public class ProductControllerTests
     {
+        #region PosotiveTestCases
         [Fact]
         public void PostOrder_PhysicalProduct_ReturnSuccess()
         {
@@ -123,6 +124,9 @@ namespace ServerlessOrderProcessingWebAPI.Tests
             Assert.Equal(200, okResult.StatusCode);
         }
 
+        #endregion
+
+        #region NegativeTestCases
         [Fact]
         public void PostOrder_PhysicalProduct_ReturnFailure()
         {
@@ -138,5 +142,6 @@ namespace ServerlessOrderProcessingWebAPI.Tests
 
             Assert.Equal(500, okResult.StatusCode);
         }
+        #endregion
     }
 }

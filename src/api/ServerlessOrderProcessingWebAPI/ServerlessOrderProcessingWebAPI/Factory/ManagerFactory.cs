@@ -10,6 +10,11 @@ namespace ServerlessOrderProcessingWebAPI.Factory
 {
     public class ManagerFactory
     {
+        /// <summary>
+        /// This method calls manager based on product type
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
         public ResponseModel OrderManager(OrderModel order)
         {
             ResponseModel response = new ResponseModel();

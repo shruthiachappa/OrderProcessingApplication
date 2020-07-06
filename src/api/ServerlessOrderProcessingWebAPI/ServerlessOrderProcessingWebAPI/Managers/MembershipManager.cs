@@ -1,4 +1,6 @@
-﻿using ServerlessOrderProcessingWebAPI.Models;
+﻿using Amazon.CloudWatchLogs.Model;
+using ServerlessOrderProcessingWebAPI.Core;
+using ServerlessOrderProcessingWebAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +12,12 @@ namespace ServerlessOrderProcessingWebAPI.Managers
     {
         public bool SendEmail(OrderModel order)
         {
+            EmailModel model = new EmailModel()
+            {
+                FromAddress = "FROMADDRESS@TEST.com",
+                Subject = "Activating/upgrading membership"
+            };
+            SendEmailExtension.SendEmail(model);
             return true;
         }
 
