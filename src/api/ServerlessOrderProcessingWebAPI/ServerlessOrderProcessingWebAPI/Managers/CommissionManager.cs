@@ -1,4 +1,6 @@
 ﻿using ServerlessOrderProcessingWebAPI.Core;
+using ServerlessOrderProcessingWebAPI.DataAccess;
+using ServerlessOrderProcessingWebAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,10 @@ namespace ServerlessOrderProcessingWebAPI.Managers
         public virtual bool GenerateCommission()
         {
             // Can be saved in dynamoDB / SQL
+
+            ////OrderTable o = new OrderTable();
+           //// await DataAccessManager.SaveOrderToDBAsync(o);
+          
             // % of commission can be kept in DB or in Core business layer
             CommissionExtensions.GenerateGenericCommission();
             return true;
