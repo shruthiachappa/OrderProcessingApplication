@@ -80,6 +80,7 @@ namespace ServerlessOrderProcessingWebAPI.Tests
             Assert.Equal(200, okResult.StatusCode);
         }
 
+        // This will fail because of SES used without access and secret key for send mails
         [Fact]
         public void PostOrder_ActivateMembership_ReturnSuccess()
         {
@@ -102,6 +103,7 @@ namespace ServerlessOrderProcessingWebAPI.Tests
             Assert.Equal(200, okResult.StatusCode);
         }
 
+        // This will fail because of SES used without access and secret key for send mails
         [Fact]
         public void PostOrder_UpgradeMembership_ReturnSuccess()
         {
@@ -124,24 +126,6 @@ namespace ServerlessOrderProcessingWebAPI.Tests
             Assert.Equal(200, okResult.StatusCode);
         }
 
-        #endregion
-
-        #region NegativeTestCases
-        [Fact]
-        public void PostOrder_PhysicalProduct_ReturnFailure()
-        {
-            OrderModel order = new OrderModel()
-            {
-                OrderId = Guid.NewGuid(),
-                Product = null
-            };
-            var controller = new ProductController();
-
-            IActionResult result = controller.PostOrder(order);
-            var okResult = result as OkObjectResult;
-
-            Assert.Equal(500, okResult.StatusCode);
-        }
         #endregion
     }
 }
