@@ -1,6 +1,13 @@
 1. Used OOP concepts
 2. Clean code principals is implemented
 3. Design patterns are implented - factory pattern
-4. Used AWS services
-5. Method summary and comments are added for better understanding and for extensions in future
-6. PLease check git commit to see how the code is processed.
+4. Used centralized exception handling
+5. Used AWS services
+6. Method summary and comments are added for better understanding and for extensions in future
+7. PLease check git commit to see how the code is processed.
+8. Can be extended further like below
+	- Can create seperate projects like Business, DataAccess etc.
+	- Business logic can be kept in Business project by creating seperate interfaces and method - using repository patterns and hook in startup.cs
+	- DataAccess logic can be kept in DataAccess project by created seperate interfaces and method - using repository pattern and hook in startup.cs
+	- Automappers can be implemnted to convert between model to table and visa versa
+	- resource files can be added instead of any hard coded texts
